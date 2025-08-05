@@ -1,13 +1,13 @@
-# 👕 CNN with MobileNetV2 & Keras Callbacks on Fashion MNIST
+# CNN with MobileNetV2 & Keras Callbacks on Fashion MNIST
 
 This project demonstrates how to use **MobileNetV2** as a feature extractor for the **Fashion MNIST** dataset, combining **transfer learning** with a custom classification head.  
-It also showcases the use of **Keras callbacks** — including **EarlyStopping**, **ModelCheckpoint**, and **TensorBoard** — to optimise training and track performance.
+It also showcases the use of **Keras callbacks**, including **EarlyStopping**, **ModelCheckpoint**, and **TensorBoard**, to optimise training and track performance.
 
 The model’s **best hyperparameters** (dense units, dropout, learning rate, optimiser) were sourced from prior hyperparameter tuning using **Random Search**, which can be found here: [cnn-keras-tuning-fashion-mnist](https://github.com/adabyt/cnn-keras-tuning-fashion-mnist).
 
 ---
 
-## 🚀 Features
+## Features
 - Uses **MobileNetV2** pretrained on ImageNet for feature extraction  
 - Adds a **custom dense layer & dropout** for Fashion MNIST classification  
 - Implements **key Keras callbacks**:  
@@ -18,7 +18,7 @@ The model’s **best hyperparameters** (dense units, dropout, learning rate, opt
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 ```plaintext
 cnn-callbacks-fashion-mnist/
 │
@@ -32,25 +32,25 @@ cnn-callbacks-fashion-mnist/
 
 ---
 
-## 🛠 Installation & Setup
+## Installation & Setup
 
-1️⃣ **Clone the repo**
+1. **Clone the repo**
 ```bash
 git clone https://github.com/adabyt/cnn-callbacks-fashion-mnist.git
 cd cnn-callbacks-fashion-mnist
 ```
 
-2️⃣ **Install dependencies**
+2. **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-3️⃣ **Run the script**
+3. **Run the script**
 ```bash
 python callbacks_fashion_mnist.py
 ```
 
-4️⃣ **Launch TensorBoard (optional)**
+4. **Launch TensorBoard (optional)**
 ```bash
 tensorboard --logdir logs/fit
 ```
@@ -58,7 +58,7 @@ Then open [http://localhost:6006](http://localhost:6006) to visualise training.
 
 ---
 
-## 📊 Model Summary
+## Model Summary
 The final model structure:
 
 - **MobileNetV2 (frozen)** → feature extraction  
@@ -71,9 +71,9 @@ _Total trainable parameters: ~619k (MobileNetV2 frozen)_
 
 ---
 
-## 📈 Results & Observations
+## Results & Observations
 
-### 🔍 Performance Across Runs
+### Performance Across Runs
 The model was trained multiple times to evaluate run-to-run consistency:
 
 | Run | Test Accuracy | Test Loss | Epochs Used |
@@ -90,7 +90,7 @@ The model was trained multiple times to evaluate run-to-run consistency:
 
 ---
 
-### 📌 Why do results vary per run?
+### Why do results vary per run?
 
 1. **Shuffle order** – Different batch orders change weight updates.  
 2. **Weight initialisation** – Initial weights differ unless a seed is fixed.  
@@ -100,13 +100,13 @@ The model was trained multiple times to evaluate run-to-run consistency:
 
 ---
 
-### 📉 Signs of Overfitting
+### Signs of Overfitting
 The logs suggest mild overfitting: training accuracy improved faster than validation accuracy.
 
 **Ways to mitigate overfitting:**
 - Add more data  
 - Use data augmentation  
-- Apply regularization (L1/L2)  
+- Apply regularisation (L1/L2)  
 - Increase dropout  
 - Rely on early stopping  
 - Add batch normalisation  
@@ -115,7 +115,7 @@ The logs suggest mild overfitting: training accuracy improved faster than valida
 
 ---
 
-## 🏁 Conclusion
+## Conclusion
 
 This project shows how:
 - **Transfer learning with MobileNetV2** can effectively classify Fashion MNIST with minimal training time.  
